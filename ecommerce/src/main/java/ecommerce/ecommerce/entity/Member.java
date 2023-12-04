@@ -1,4 +1,4 @@
-package ecommerce.ecommerce.member.entity;
+package ecommerce.ecommerce.entity;
 
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;

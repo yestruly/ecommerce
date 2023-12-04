@@ -1,6 +1,6 @@
 package ecommerce.ecommerce.config.security;
 
-import ecommerce.ecommerce.member.service.MemberService;
+import ecommerce.ecommerce.service.MemberService;
 import io.jsonwebtoken.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,13 +1,11 @@
-package ecommerce.ecommerce.member.dto;
+package ecommerce.ecommerce.dto;
 
-import ecommerce.ecommerce.member.entity.Member;
+import ecommerce.ecommerce.entity.Member;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.Collections;
-import java.util.List;
 
-import static ecommerce.ecommerce.member.entity.constants.Role.*;
+import static ecommerce.ecommerce.entity.constants.Role.*;
 
 @Data
 public class MemberDto extends Member {

@@ -1,8 +1,8 @@
-package ecommerce.ecommerce.member.service;
+package ecommerce.ecommerce.service;
 
-import ecommerce.ecommerce.member.dto.MemberDto;
-import ecommerce.ecommerce.member.entity.Member;
-import ecommerce.ecommerce.member.repository.MemberRepository;
+import ecommerce.ecommerce.dto.MemberDto;
+import ecommerce.ecommerce.entity.Member;
+import ecommerce.ecommerce.repository.MemberRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

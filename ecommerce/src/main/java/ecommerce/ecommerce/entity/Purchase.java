@@ -1,7 +1,5 @@
-package ecommerce.ecommerce.purchase.entity;
+package ecommerce.ecommerce.entity;
 
-import ecommerce.ecommerce.cart.entity.Cart;
-import ecommerce.ecommerce.member.entity.Member;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

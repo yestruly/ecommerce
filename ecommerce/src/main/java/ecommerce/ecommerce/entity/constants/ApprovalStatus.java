@@ -1,4 +1,4 @@
-package ecommerce.ecommerce.purchase.entity.constants;
+package ecommerce.ecommerce.entity.constants;
 
 public enum ApprovalStatus {
     APPROVE,

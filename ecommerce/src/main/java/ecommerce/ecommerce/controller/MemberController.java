@@ -1,16 +1,13 @@
-package ecommerce.ecommerce.member.contorller;
+package ecommerce.ecommerce.controller;
 
 
 import ecommerce.ecommerce.config.security.TokenProvider;
-import ecommerce.ecommerce.member.dto.MemberDto;
-import ecommerce.ecommerce.member.entity.Member;
-import ecommerce.ecommerce.member.service.MemberService;
+import ecommerce.ecommerce.dto.MemberDto;
+import ecommerce.ecommerce.service.MemberService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.security.Principal;
 
 @RestController
 @RequiredArgsConstructor
@@ -43,4 +40,15 @@ public class MemberController {
         session.removeAttribute("sessionId");
         return "logout";
     }
+
+
+//    @PutMapping("/update")
+//    public ResponseEntity<?> updateMember(@RequestBody MemberDto.UpdateMember member){
+//
+//        memberService.updateMember(member);
+//
+//        return ResponseEntity.ok("회원정보 수정 성공");
+//    }
+
+
 }

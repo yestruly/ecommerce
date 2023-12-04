@@ -1,6 +1,6 @@
-package ecommerce.ecommerce.cart.entity;
+package ecommerce.ecommerce.entity;
 
-import ecommerce.ecommerce.member.entity.Member;
+import ecommerce.ecommerce.entity.Member;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

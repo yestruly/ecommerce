@@ -1,4 +1,4 @@
-package ecommerce.ecommerce.member.entity.constants;
+package ecommerce.ecommerce.entity.constants;
 
 public enum Role {
     ROLE_CUSTOMER,

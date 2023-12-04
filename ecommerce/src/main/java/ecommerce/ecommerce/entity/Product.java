@@ -1,17 +1,15 @@
-package ecommerce.ecommerce.product.entity;
+package ecommerce.ecommerce.entity;
 
-import ecommerce.ecommerce.member.entity.Member;
+import ecommerce.ecommerce.entity.Member;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "product")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

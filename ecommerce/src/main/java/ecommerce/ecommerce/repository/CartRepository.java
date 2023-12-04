@@ -1,6 +1,6 @@
-package ecommerce.ecommerce.cart.repository;
+package ecommerce.ecommerce.repository;
 
-import ecommerce.ecommerce.cart.entity.Cart;
+import ecommerce.ecommerce.entity.Cart;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

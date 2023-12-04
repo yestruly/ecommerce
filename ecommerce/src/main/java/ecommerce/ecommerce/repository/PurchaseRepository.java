@@ -1,6 +1,6 @@
-package ecommerce.ecommerce.purchase.repository;
+package ecommerce.ecommerce.repository;
 
-import ecommerce.ecommerce.purchase.entity.Purchase;
+import ecommerce.ecommerce.entity.Purchase;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
