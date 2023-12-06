@@ -1,21 +1,18 @@
 package ecommerce.ecommerce.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
+import lombok.*;
+
 import java.time.LocalDateTime;
-import lombok.Setter;
 
 @Entity
-@Table(name = "cart")
+@Table(name = "product")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Cart {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,12 +21,10 @@ public class Cart {
     @JoinColumn(name = "member")
     private Member member;
 
-
-    @Column(name = "product_name")
+    @Column(name = "product_name", unique = true)
     private String productName;
-    private int count;
     private Long price;
+    private String detail;
     private LocalDateTime create_date;
     private LocalDateTime update_date;
-
 }

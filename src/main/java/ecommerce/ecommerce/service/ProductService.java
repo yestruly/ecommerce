@@ -33,7 +33,8 @@ public class ProductService {
     }
 
     productRepository.save(new Product().builder()
-        .product_name(productRegister.getProduct_name())
+        .member(member)
+        .productName(productRegister.getProductName())
         .price(productRegister.getPrice())
         .detail(productRegister.getDetail())
         .create_date(LocalDateTime.now())
