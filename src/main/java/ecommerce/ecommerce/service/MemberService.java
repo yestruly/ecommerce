@@ -1,6 +1,7 @@
 package ecommerce.ecommerce.service;
 
 import ecommerce.ecommerce.dto.MemberDto;
+import ecommerce.ecommerce.dto.MemberDto.UpdateMember;
 import ecommerce.ecommerce.entity.Member;
 import ecommerce.ecommerce.repository.MemberRepository;
 import lombok.AllArgsConstructor;
@@ -12,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.security.Principal;
-import java.time.LocalDateTime;
 
 @Service
 @AllArgsConstructor
@@ -65,20 +65,19 @@ public class MemberService implements UserDetailsService {
 
     //회원 정보 수정
     @Transactional
-    public void updateMember(String username, MemberDto.UpdateMember updateMember, Principal principal){
-        String memberName = principal.getName();
-        if(!memberName.equals(username)){
-            throw new RuntimeException("일치하지 않는 회원");
-        }
+    public void updateMember(UpdateMember updateMember, Principal principal, String password){
+        String userName = principal.getName();
+        Member member = memberRepository.findByUsername(userName)
+            .orElseThrow(() -> new RuntimeException("존재하지 않는 회원"));
 
-        Member member = memberRepository.findByUsername(memberName)
-                .orElseThrow(() -> new RuntimeException("존재하지 않는 회원"));
+        if(!password.equals(member.getPassword())){
+            throw new RuntimeException("비밀번호가 일치하지 않습니다.");
+        }
 
         member.setPassword(passwordEncoder.encode(updateMember.getPassword()));
         member.setPhone(updateMember.getPhone());
         member.setEmail(updateMember.getEmail());
         member.setAddress(updateMember.getAddress());
-        member.setUpdate_date(LocalDateTime.now());
         memberRepository.save(member);
     }
 }

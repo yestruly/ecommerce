@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 @Entity
 @Table(name = "product")
@@ -25,6 +27,11 @@ public class Product {
     private String productName;
     private Long price;
     private String detail;
+
+    @CreatedDate
     private LocalDateTime create_date;
+
+    @LastModifiedDate
     private LocalDateTime update_date;
+
 }

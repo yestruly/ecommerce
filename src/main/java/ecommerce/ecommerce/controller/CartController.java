@@ -28,8 +28,8 @@ public class CartController {
 
     private final CartService cartService;
 
-    @GetMapping("/product/{name}")
-    public ResponseEntity<?> getProductList(@PathVariable String name){
+    @GetMapping("/product")
+    public ResponseEntity<?> getProductList(String name){
         List<Product> productList = cartService.searchProduct(name);
         AtomicLong countProduct = new AtomicLong(0L);
         List<ProductDto.SearchProduct> searchProductList = new ArrayList<>();
@@ -49,19 +49,19 @@ public class CartController {
         return ResponseEntity.ok("상품 불러오기 성공");
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<?> addProductToCart(@RequestBody CartDto.AddCart cart, Principal principal){
-        cartService.addCart(cart,principal);
+    @PostMapping()
+    public ResponseEntity<?> addProductToCart(String productName,Long price, Principal principal){
+        cartService.addCart(productName, price, principal);
         return ResponseEntity.ok("장바구니에 상품 추가 성공");
     }
 
-    @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateProduct(@PathVariable Long id,@RequestBody CartDto.UpdateCart cart, Principal principal){
-        cartService.updateCart(id, cart, principal);
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateProduct(@PathVariable Long id,Long count, Principal principal){
+        cartService.updateCart(id, count, principal);
         return ResponseEntity.ok("수정 성공");
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteProduct(@PathVariable Long id, Principal principal){
         cartService.deleteCart(id, principal);
         return ResponseEntity.ok("삭제 성공");

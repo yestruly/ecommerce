@@ -1,9 +1,11 @@
 package ecommerce.ecommerce.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import org.antlr.v4.runtime.misc.NotNull;
 
 @Getter
 @Setter
@@ -21,7 +23,10 @@ public class ProductDto {
 
     @Data
     public static class RegisterProduct{
+        @NotBlank(message = "상품명은 반드시 입력해야 합니다.")
         private String productName;
+
+        @NotBlank(message = "가격은 반드시 입력해야 합니다.")
         private Long price;
         private String detail;
 
@@ -29,6 +34,7 @@ public class ProductDto {
 
     @Data
     public static class UpdateProduct{
+        @NotBlank(message = "가격은 반드시 입력해야 합니다.")
         private Long price;
         private String detail;
     }

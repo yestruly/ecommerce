@@ -37,7 +37,6 @@ public class ProductService {
         .productName(productRegister.getProductName())
         .price(productRegister.getPrice())
         .detail(productRegister.getDetail())
-        .create_date(LocalDateTime.now())
         .build());
 
 
@@ -62,7 +61,6 @@ public class ProductService {
 
     product.setPrice(updateProduct.getPrice());
     product.setDetail(updateProduct.getDetail());
-    product.setUpdate_date(LocalDateTime.now());
 
     productRepository.save(product);
 

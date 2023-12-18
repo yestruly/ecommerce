@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 @Entity
 @Table(name = "cart")
@@ -25,11 +27,16 @@ public class Cart {
     private Member member;
 
 
-    @Column(name = "product_name")
-    private String productName;
-    private int count;
+    @ManyToOne
+    @JoinColumn(name = "product")
+    private Product product;
+    private Long count;
     private Long price;
+
+    @CreatedDate
     private LocalDateTime create_date;
+
+    @LastModifiedDate
     private LocalDateTime update_date;
 
 }

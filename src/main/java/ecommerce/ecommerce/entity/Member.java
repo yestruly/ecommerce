@@ -1,6 +1,8 @@
 package ecommerce.ecommerce.entity;
 
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -44,9 +46,11 @@ public class Member implements UserDetails {
     private String role;
 
     @Column
+    @CreatedDate
     private LocalDateTime create_date;
 
     @Column
+    @LastModifiedDate
     private LocalDateTime update_date;
 
     @Override

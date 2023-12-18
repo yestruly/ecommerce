@@ -5,6 +5,7 @@ import ecommerce.ecommerce.config.security.TokenProvider;
 import ecommerce.ecommerce.dto.MemberDto;
 import ecommerce.ecommerce.service.MemberService;
 import jakarta.servlet.http.HttpSession;
+import java.security.Principal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -42,13 +43,13 @@ public class MemberController {
     }
 
 
-//    @PutMapping("/update")
-//    public ResponseEntity<?> updateMember(@RequestBody MemberDto.UpdateMember member){
-//
-//        memberService.updateMember(member);
-//
-//        return ResponseEntity.ok("회원정보 수정 성공");
-//    }
+    @PutMapping("/update")
+    public ResponseEntity<?> updateMember(@RequestBody MemberDto.UpdateMember member, Principal principal, String password){
+
+        memberService.updateMember(member,principal,password);
+
+        return ResponseEntity.ok("회원정보 수정 성공");
+    }
 
 
 }
